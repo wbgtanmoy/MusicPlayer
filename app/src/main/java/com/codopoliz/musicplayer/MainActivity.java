@@ -47,6 +47,8 @@ public class MainActivity extends Activity {
     private void playAudio(String media) {
         //Check is service is active
         if (!serviceBound) {
+
+            // starts the bound service
             Intent playerIntent = new Intent(this, MediaPlayerService.class);
             playerIntent.putExtra("media", media);
             playerIntent.setAction(MediaPlayerService.ACTION_START_FOREGROUND_SERVICE);
